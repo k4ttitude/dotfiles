@@ -8,7 +8,7 @@ window:
   padding:
     x: 6
     y: 6
-  decorations: buttonless
+  decorations: None
   opacity: 0.85
   startup_mode: Windowed
 
@@ -20,6 +20,8 @@ window:
 #     - tmux a || tmux
 
 font:
+  size: 10
+
   # Normal (roman) font face
   normal:
     # Font family
