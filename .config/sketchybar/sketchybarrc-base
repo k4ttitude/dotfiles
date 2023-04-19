@@ -45,7 +45,7 @@ sketchybar	--add	item current_space left \
 sketchybar 	--add item front_app left \
             --set   front_app \
                           background.padding_left=0 \
-                          background.padding_right=0 \
+                         background.padding_right=0 \
                           icon.y_offset=0 \
                           icon.color=0xffffffff \
                           label.drawing=no \
@@ -66,7 +66,6 @@ sketchybar  --add   bracket front_app_bracket \
 sketchybar	--add	item bird q \
             --set	bird \
                     	background.color=0xaa24273a \
-                      background.padding_right=0 \
                       icon= \
                     	icon.color=0xccffffff \
                     	icon.font="$FONT_FACE:Bold:20.0" \
@@ -87,7 +86,6 @@ SPOTIFY_EVENT="com.spotify.client.PlaybackStateChanged"
 sketchybar	--add	item spotify_playlist e \
             --set	spotify_playlist \
                         background.color=0xaa24273a \
-                        background.padding_left=0 \
                         icon=󰲸 \
                         icon.color=0xffc6a0f6 \
                         icon.font="$FONT_FACE:Bold:22.0" \
