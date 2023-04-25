@@ -333,7 +333,7 @@ grid < alt - j : yabai -m window --grid 2:2:0:1:1:1; skhd -k 'escape'
 grid < alt - k : yabai -m window --grid 2:2:1:0:1:1; skhd -k 'escape'
 grid < alt - l : yabai -m window --grid 2:2:1:1:1:1; skhd -k 'escape'
 # center
-grid < c       : yabai -m window --grid 4:4:1:1:2:2; skhd -k 'escape'
+grid < c       : yabai -m window --grid 10:6:1:1:4:8; skhd -k 'escape'
 
 # resize window - we do not exit this mode automatically.
 resize < h       : yabai -m window --resize left:-20:0
