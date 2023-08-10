@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-PLUGIN_DIR="$HOME/.config/sketchybar/plugins-laptop"
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 FONT_FACE="Hack Nerd Font"
 
 ##### Bar Appearance #####
@@ -34,9 +34,9 @@ sketchybar	--default \
 
 sketchybar	--add	item current_space left \
             --set	current_space \
-                        background.color=0xff67e8f9 \
+                        background.color=0xcc67e8f9 \
                         background.padding_right=5 \
-                        icon.font="$FONT_FACE:Bold:13.0" \
+                        icon.font="$FONT_FACE:Bold:15.0" \
                         icon.color=0xff24273a \
                         label.drawing=off \
                         script="$PLUGIN_DIR/current_space.sh" \
@@ -62,47 +62,6 @@ sketchybar  --add   bracket front_app_bracket \
                     front_app \
                     front_app.name \
             --subscribe	front_app front_app_switched window_focus title_change \
-
-sketchybar	--add	item bird q \
-            --set	bird \
-                    	background.color=0xaa24273a \
-                      icon= \
-                    	icon.color=0xccffffff \
-                    	icon.font="$FONT_FACE:Bold:20.0" \
-                    	label.drawing=off \
-                    	script="$PLUGIN_DIR/bird.sh" \
-            --subscribe bird mouse.clicked
-
-sketchybar	--add	item weather q \
-            --set	weather \
-                    	icon= \
-                    	icon.color=0xfff5bde6 \
-                        icon.font="$FONT_FACE:Bold:15.0" \
-                    	update_freq=1800 \
-                    	script="$PLUGIN_DIR/weather.sh" \
-            --subscribe weather system_woke
-
-SPOTIFY_EVENT="com.spotify.client.PlaybackStateChanged"
-sketchybar	--add	item spotify_playlist e \
-            --set	spotify_playlist \
-                        background.color=0xaa24273a \
-                        icon=󰲸 \
-                        icon.color=0xffc6a0f6 \
-                        icon.font="$FONT_FACE:Bold:22.0" \
-                        label.drawing=off \
-                        script="$PLUGIN_DIR/spotify_playlist.sh" \
-            --subscribe spotify_playlist mouse.clicked
-
-sketchybar  --add   event spotify_change $SPOTIFY_EVENT \
-            --add   item spotify e \
-            --set   spotify \
-                        icon= \
-                    	icon.font="$FONT_FACE:Bold:20.0" \
-                    	icon.y_offset=1 \
-                        label.drawing=off \
-                    	label.padding_left=2 \
-                        script="$PLUGIN_DIR/spotify.sh" \
-            --subscribe spotify spotify_change mouse.clicked
 
 sketchybar  --add   item clock right \
             --set   clock \

@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 sketchybar	--set	bird background.padding_right=14
 
 sketchybar	--set	spotify_playlist background.padding_left=16
