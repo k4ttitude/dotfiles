@@ -85,12 +85,13 @@ focus_window < h    : yabai -m window --focus west; skhd -k 'escape'
 focus_window < j    : yabai -m window --focus south; skhd -k 'escape'
 focus_window < k    : yabai -m window --focus north; skhd -k 'escape'
 focus_window < l    : yabai -m window --focus east; skhd -k 'escape'
-focus_window < 0x2A : yabai -m window --focus recent; skhd -k 'escape'
-focus_window < 0x21 : yabai -m window --focus prev; skhd -k 'escape'
-focus_window < 0x1E : yabai -m window --focus next; skhd -k 'escape'
-focus_window < 0x2B : yabai -m window --focus prev; skhd -k 'escape'
-focus_window < 0x2F : yabai -m window --focus next; skhd -k 'escape'
+focus_window < r : yabai -m window --focus recent; skhd -k 'escape'
+focus_window < p    : yabai -m window --focus stack.prev; skhd -k 'escape'
+focus_window < n    : yabai -m window --focus stack.next; skhd -k 'escape'
 focus_window < m    : yabai -m window --focus largest; skhd -k 'escape'
+focus_window < c    : open -a 'Visual Studio Code'; skhd -k 'escape'
+focus_window < b    : open -a 'Google Chrome'; skhd -k 'escape'
+# focus_window < c    : open -a 'Visual Studio Code' for wid in $(yabai -m query --windows | jq '.[] | select(.app == "Alacritty") | .id'); do yabai -m window $wid --space mouse; yabai -m window --focus $wid; done
 
 # focus spaces
 focus_space < h    : yabai -m space --focus prev; skhd -k 'escape'
@@ -355,7 +356,7 @@ toggle_window < f       : yabai -m window --toggle float; skhd -k 'escape'
 toggle_window < s       : yabai -m window --toggle sticky; skhd -k 'escape'
 toggle_window < t       : yabai -m window --toggle topmost; skhd -k 'escape'
 toggle_window < b       : yabai -m window --toggle border; skhd -k 'escape'
-toggle_window < i       : yabai -m window --toggle split; skhd -k 'escape'
+toggle_window < v       : yabai -m window --toggle split; skhd -k 'escape'
 toggle_window < p       : yabai -m window --toggle pip; skhd -k 'escape'
 toggle_window < z       : yabai -m window --toggle zoom-parent; skhd -k 'escape'
 toggle_window < m       : yabai -m window --toggle zoom-fullscreen; skhd -k 'escape'
@@ -411,7 +412,7 @@ launch_script < u         : skhd -k 'escape'; ~/.bin/macos/browser-url.applescri
 
 
 # launch finder windows
-launch_finder < a : skhd -k 'escape'; open ~/Applications
+launch_finder < a : skhd -k 'escape'; open /Applications
 launch_finder < c : skhd -k 'escape'; open ~/Code
 launch_finder < d : skhd -k 'escape'; open ~/Downloads
 launch_finder < h : skhd -k 'escape'; open ~
