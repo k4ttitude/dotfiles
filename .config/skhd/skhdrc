@@ -91,7 +91,7 @@ focus_window < n    : yabai -m window --focus stack.next; skhd -k 'escape'
 focus_window < m    : yabai -m window --focus largest; skhd -k 'escape'
 focus_window < c    : open -a 'Visual Studio Code'; skhd -k 'escape'
 focus_window < b    : open -a 'Google Chrome'; skhd -k 'escape'
-# focus_window < c    : open -a 'Visual Studio Code' for wid in $(yabai -m query --windows | jq '.[] | select(.app == "Alacritty") | .id'); do yabai -m window $wid --space mouse; yabai -m window --focus $wid; done
+# focus_window < c    : open -a 'Visual Studio Code' for wid in $(yabai -m query --windows | jq '.[] | select(.app == "Alacritty") | .id'); yabai -m window $wid --space mouse; yabai -m window --focus $wid; end
 
 # focus spaces
 focus_space < h    : yabai -m space --focus prev; skhd -k 'escape'
@@ -466,5 +466,5 @@ ctrl + alt - l : yabai -m window --insert east
 # Alacritty
 cmd - j [
   "alacritty" : skhd -k "cmd - h"
-  * : for wid in $(yabai -m query --windows | jq '.[] | select(.app == "Alacritty") | .id'); do yabai -m window $wid --space mouse; yabai -m window --focus $wid; done
+  * : for wid in $(yabai -m query --windows | jq '.[] | select(.app == "Alacritty") | .id'); yabai -m window $wid --space mouse; yabai -m window --focus $wid; end
 ]
