@@ -1,15 +1,11 @@
 window:
-  dimensions:
-    columns: 160
-    lines: 120
-  # position:
-  #   x: 1498
-  #   y: 0
   padding:
-    x: 6
-    y: 6
-  decorations: None
+    x: 4
+    y: 4
+  dynamic_padding: true
+
   opacity: 0.85
+  decorations: None
   startup_mode: Windowed
 
 # shell:
@@ -18,7 +14,6 @@ window:
 #     - -l
 #     - -c
 #     - tmux a || tmux
-
 font:
   size: 10
 
@@ -30,7 +25,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: MesloLGS NF
+    family: MesloLGM Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -41,7 +36,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: MesloLGS NF
+    family: MesloLGM Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -52,7 +47,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: MesloLGS NF
+    family: MesloLGM Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -63,7 +58,35 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: MesloLGS NF
+    family: MesloLGM Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
+colors:
+  # Default colors
+  primary:
+    background: '#2D2A2E'
+    foreground: '#FCFCFA'
+
+  # Normal colors
+  normal:
+    black: '#403E41'
+    red: '#FF6188'
+    green: '#A9DC76'
+    yellow: '#FFD866'
+    blue: '#FC9867'
+    magenta: '#AB9DF2'
+    cyan: '#78DCE8'
+    white: '#FCFCFA'
+
+  # Bright colors
+  bright:
+    black: '#727072'
+    red: '#FF6188'
+    green: '#A9DC76'
+    yellow: '#FFD866'
+    blue: '#FC9867'
+    magenta: '#AB9DF2'
+    cyan: '#78DCE8'
+    white: '#FCFCFA'
+theme: Monokai-Pro
