@@ -23,8 +23,10 @@ return {
               hint = icons.diagnostics.Hint,
             },
           },
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 1 } },
+          { "filename", separator = "", symbols = { modified = "●" }, padding = { left = 0, right = 1 } },
+        },
+        lualine_c = {
           -- stylua: ignore
           {
             function() return require("nvim-navic").get_location() end,
