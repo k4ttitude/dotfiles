@@ -23,15 +23,17 @@ return {
               hint = icons.diagnostics.Hint,
             },
           },
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 1 } },
+          { "filename", separator = "", symbols = { modified = "●" }, padding = { left = 0, right = 1 } },
+        },
+        lualine_c = {
           -- stylua: ignore
           {
             function() return require("nvim-navic").get_location() end,
             cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
           },
         },
-        lualine_x = {
+        lualine_y = {
           -- stylua: ignore
           {
             function() return require("noice").api.status.command.get() end,
@@ -60,9 +62,9 @@ return {
             },
           },
         },
-        lualine_y = {
-          { "progress", separator = " ", padding = { left = 1, right = 0 } },
-          { "location", padding = { left = 0, right = 1 } },
+        lualine_z = {
+          { "progress", separator = "", padding = { left = 1 } },
+          { "location", padding = { right = 1 } },
         },
       },
       extensions = { "neo-tree", "lazy" },
