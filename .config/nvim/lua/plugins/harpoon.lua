@@ -1,4 +1,9 @@
 local plugin = "harpoon"
+require("which-key").register({
+  h = {
+    name = "Harpoon",
+  },
+}, { prefix = "<leader>" })
 
 return {
   "ThePrimeagen/harpoon",
