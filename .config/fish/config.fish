@@ -9,11 +9,6 @@ if status is-interactive
     fish_add_path /usr/local/bin
     fish_add_path $HOME/.local/bin
 
-
-    # pnpm
-    export PNPM_HOME="/Users/kattitude/Library/pnpm"
-    fish_add_path "$PNPM_HOME"
-
     # ---- aliases ----
     alias g=git
     alias p=pnpm
@@ -21,6 +16,7 @@ if status is-interactive
 
     # aliases:dotfiles
     alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
 
     # ---- key bindings ----
     fish_vi_key_bindings
