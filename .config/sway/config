@@ -22,7 +22,7 @@ set $menu bemenu-run
 
 
 ### Styles
-gaps inner 8
+gaps inner 4
 gaps outer 1
 
 default_border pixel 2
@@ -35,12 +35,9 @@ exec waybar
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
+output DP-2 mode 2560x1440@143.912Hz position 0,0
+output * bg /usr/share/backgrounds/sway/interstellar.jpg fill
+output * adaptive_sync on
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
@@ -83,6 +80,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill
     # Start your launcher
     bindsym $mod+d exec $menu
     bindsym $mod+space exec $menu
+
+    # Screenshot
+    bindsym Shift+Print exec grim - | wl-copy 
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -188,10 +188,6 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill
 # Resizing containers:
 #
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
@@ -209,29 +205,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# bar {
-#     position top
-# 
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-# 
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# }
-
 include /etc/sway/config.d/*
 
 set {
     $float floating enable; border normal 1; shadows enable
     $popup $float; sticky enable
+    $game inhibit_idle focus; floating enable; border none; fullscreen enable; shadows disable
 }
 
 for_window {
@@ -246,6 +225,10 @@ for_window {
     [window_type="tooltip"] $float
     [window_type="notification"] $float
     [title="Picture in picture"] border pixel 1; floating enable
+
+    [class="steam_app.*"] $game
+    [instance="steam_app.*"] $game
+    [instance="steam_app_*"] $game
 
     [app_id="pavucontrol"] $popup
     [class="1Password"] $float
