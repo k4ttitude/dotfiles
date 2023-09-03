@@ -6,7 +6,7 @@
 
 ### Variables
 #
-# Logo key. Use Mod1 for Alt.
+# Logo key. Mod1: Alt, Mod4: Super
 set $mod Mod1
 # Home row direction keys, like vim
 set $left h
@@ -78,7 +78,6 @@ output * adaptive_sync on
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
     bindsym $mod+space exec $menu
 
     # Screenshot
