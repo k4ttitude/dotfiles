@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "sway/language", "clock", "tray"],
+    "modules-right": ["pulseaudio", "network", "custom/ibus", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -56,6 +56,14 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/ibus": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/sway/bin/ibus/display.sh",
+        "on-click": "ibus-setup",
+        "interval": "once",
+        "signal": 8
     }
 }
 

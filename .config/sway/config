@@ -24,13 +24,18 @@ set $menu bemenu-run
 ### Styles
 gaps inner 4
 gaps outer 1
-
 default_border pixel 2
 
 font pango:SourceCodePro Medium 11
 
+focus_follows_mouse no
+
 ### Bar
 exec waybar
+
+### IBus
+exec ibus-daemon -d
+bindsym $mod+Ctrl+i exec $HOME/.config/sway/bin/ibus/toggle.sh
 
 ### Output configuration
 #
