@@ -25,7 +25,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: MesloLGM Nerd Font
+    family: MesloLGS Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -36,7 +36,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: MesloLGM Nerd Font
+    family: MesloLGS Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -47,7 +47,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: MesloLGM Nerd Font
+    family: MesloLGS Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -58,35 +58,35 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: MesloLGM Nerd Font
+    family: MesloLGS Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 colors:
   # Default colors
   primary:
-    background: '#2D2A2E'
-    foreground: '#FCFCFA'
+    background: "#2D2A2E"
+    foreground: "#FCFCFA"
 
   # Normal colors
   normal:
-    black: '#403E41'
-    red: '#FF6188'
-    green: '#A9DC76'
-    yellow: '#FFD866'
-    blue: '#FC9867'
-    magenta: '#AB9DF2'
-    cyan: '#78DCE8'
-    white: '#FCFCFA'
+    black: "#403E41"
+    red: "#FF6188"
+    green: "#A9DC76"
+    yellow: "#FFD866"
+    blue: "#FC9867"
+    magenta: "#AB9DF2"
+    cyan: "#78DCE8"
+    white: "#FCFCFA"
 
   # Bright colors
   bright:
-    black: '#727072'
-    red: '#FF6188'
-    green: '#A9DC76'
-    yellow: '#FFD866'
-    blue: '#FC9867'
-    magenta: '#AB9DF2'
-    cyan: '#78DCE8'
-    white: '#FCFCFA'
+    black: "#727072"
+    red: "#FF6188"
+    green: "#A9DC76"
+    yellow: "#FFD866"
+    blue: "#FC9867"
+    magenta: "#AB9DF2"
+    cyan: "#78DCE8"
+    white: "#FCFCFA"
 theme: Monokai-Pro
