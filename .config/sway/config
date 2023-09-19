@@ -30,6 +30,8 @@ font pango:SourceCodePro Medium 11
 
 focus_follows_mouse no
 
+exec dbus-update-activation-environment --systemd DISPLAY SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 ### Bar
 exec waybar
 
