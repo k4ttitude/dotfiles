@@ -31,3 +31,10 @@ if status is-interactive
     bind -M insert \ck 'clear; commandline -f repaint'
     bind -M normal \ck 'clear; commandline -f repaint'
 end
+
+# pnpm
+set -gx PNPM_HOME "/home/katt/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
