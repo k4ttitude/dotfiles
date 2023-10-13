@@ -9,6 +9,8 @@ if status is-interactive
     fish_add_path /usr/local/bin
     fish_add_path $HOME/.local/bin
 
+    # rust
+    fish_add_path $HOME/.cargo/bin
 
     # python@3.9
     fish_add_path /Users/kattitude/Library/Python/3.9/bin
