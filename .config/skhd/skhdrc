@@ -51,10 +51,10 @@ active < f ; focus             # green
 active < g ; grid              # orange
 active < s ; swap              # red
 active < m ; move              # yellow
-active < k ; stack_window      # yellow
+active < shift - k ; stack_window      # yellow
 active < r ; resize            # cyan
 active < t ; toggle            # purple
-active < l ; launch            # blue
+active < shift - l ; launch            # blue
 focus < w  ; focus_window
 focus < s  ; focus_space
 focus < d  ; focus_display
@@ -81,6 +81,10 @@ launch < w ; default
 launch < d ; default
 
 # focus windows
+active < h    : yabai -m window --focus west; skhd -k 'escape'
+active < j    : yabai -m window --focus south; skhd -k 'escape'
+active < k    : yabai -m window --focus north; skhd -k 'escape'
+active < l    : yabai -m window --focus east; skhd -k 'escape'
 focus_window < h    : yabai -m window --focus west; skhd -k 'escape'
 focus_window < j    : yabai -m window --focus south; skhd -k 'escape'
 focus_window < k    : yabai -m window --focus north; skhd -k 'escape'
@@ -91,7 +95,6 @@ focus_window < n    : yabai -m window --focus stack.next; skhd -k 'escape'
 focus_window < m    : yabai -m window --focus largest; skhd -k 'escape'
 focus_window < c    : open -a 'Visual Studio Code'; skhd -k 'escape'
 focus_window < b    : open -a 'Google Chrome'; skhd -k 'escape'
-# focus_window < c    : open -a 'Visual Studio Code' for wid in $(yabai -m query --windows | jq '.[] | select(.app == "Alacritty") | .id'); yabai -m window $wid --space mouse; yabai -m window --focus $wid; end
 
 # focus spaces
 focus_space < h    : yabai -m space --focus prev; skhd -k 'escape'
@@ -354,7 +357,6 @@ resize < c       : yabai -m window --toggle float; yabai -m window --grid 4:4:1:
 # toggle window or space attributes
 toggle_window < f       : yabai -m window --toggle float; skhd -k 'escape'
 toggle_window < s       : yabai -m window --toggle sticky; skhd -k 'escape'
-toggle_window < t       : yabai -m window --toggle topmost; skhd -k 'escape'
 toggle_window < b       : yabai -m window --toggle border; skhd -k 'escape'
 toggle_window < v       : yabai -m window --toggle split; skhd -k 'escape'
 toggle_window < p       : yabai -m window --toggle pip; skhd -k 'escape'
@@ -464,7 +466,7 @@ ctrl + alt - l : yabai -m window --insert east
 
 
 # Alacritty
-cmd - j [
-  "alacritty" : skhd -k "cmd - h"
-  * : for wid in $(yabai -m query --windows | jq '.[] | select(.app == "Alacritty") | .id'); yabai -m window $wid --space mouse; yabai -m window --focus $wid; end
-]
+# cmd - j [
+#   "alacritty" : skhd -k "cmd - h"
+#   * : for wid in $(yabai -m query --windows | jq '.[] | select(.app == "Alacritty") | .id'); yabai -m window $wid --space mouse; yabai -m window --focus $wid; end
+# ]
