@@ -358,6 +358,7 @@ resize < c       : yabai -m window --toggle float; yabai -m window --grid 4:4:1:
 toggle_window < f       : yabai -m window --toggle float; skhd -k 'escape'
 toggle_window < s       : yabai -m window --toggle sticky; skhd -k 'escape'
 toggle_window < b       : yabai -m window --toggle border; skhd -k 'escape'
+toggle_window < e       : yabai -m window --toggle expose; skhd -k 'escape'
 toggle_window < v       : yabai -m window --toggle split; skhd -k 'escape'
 toggle_window < p       : yabai -m window --toggle pip; skhd -k 'escape'
 toggle_window < z       : yabai -m window --toggle zoom-parent; skhd -k 'escape'
