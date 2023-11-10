@@ -32,8 +32,7 @@ return {
     })
   end,
   keys = {
-    { "<leader>fr", builtin.lsp_references, desc = "Find references" },
-    { "<leader>fl", builtin.lsp_references, desc = "Last finds" },
-    { "<leader>fL", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Last finds (cwd)" },
+    { "<leader>fr", builtin.lsp_references, desc = "Recent finds" },
+    { "<leader>fR", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent finds (cwd)" },
   },
 }
