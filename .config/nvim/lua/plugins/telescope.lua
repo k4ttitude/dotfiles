@@ -32,7 +32,11 @@ return {
     })
   end,
   keys = {
-    { "<leader>fr", builtin.lsp_references, desc = "Recent finds" },
-    { "<leader>fR", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent finds (cwd)" },
+    { "<leader>fF", Util.telescope("files"), desc = "Find Files (root dir)" },
+    { "<leader>ff", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+    { "<leader>fR", builtin.lsp_references, desc = "Recent finds" },
+    { "<leader>fr", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent finds (cwd)" },
+    { "<leader>sG", Util.telescope("live_grep"), desc = "Grep (root dir)" },
+    { "<leader>sg", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
   },
 }
