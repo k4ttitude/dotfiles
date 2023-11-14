@@ -4,11 +4,12 @@ return {
     -- add tsx and treesitter
     vim.list_extend(opts.ensure_installed, {
       "astro",
+      "css",
     })
-    -- vim.filetype.add({
-    --   extention = {
-    --     astro = "astro"
-    --   }
-    -- })
+    vim.filetype.add({
+      extention = {
+        astro = "astro",
+      },
+    })
   end,
 }
