@@ -49,3 +49,4 @@ yabai -m rule --add app="^AppCleaner$" manage=off
 yabai -m rule --add app="^Problem Reporter$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Flameshot$" manage=off
+yabai -m rule --add app="^TunnelBear$" manage=off

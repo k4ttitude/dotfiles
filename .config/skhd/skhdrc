@@ -93,7 +93,7 @@ focus_window < r : yabai -m window --focus recent; skhd -k 'escape'
 focus_window < p    : yabai -m window --focus stack.prev; skhd -k 'escape'
 focus_window < n    : yabai -m window --focus stack.next; skhd -k 'escape'
 focus_window < m    : yabai -m window --focus largest; skhd -k 'escape'
-focus_window < c    : open -a 'Visual Studio Code'; skhd -k 'escape'
+focus_window < c    : open -a 'Alacritty'; skhd -k 'escape'
 focus_window < b    : open -a 'Google Chrome'; skhd -k 'escape'
 
 # focus spaces
@@ -338,6 +338,7 @@ grid < alt - k : yabai -m window --grid 2:2:1:0:1:1; skhd -k 'escape'
 grid < alt - l : yabai -m window --grid 2:2:1:1:1:1; skhd -k 'escape'
 # center
 grid < c       : yabai -m window --grid 10:6:1:1:4:8; skhd -k 'escape'
+grid < f       : yabai -m window --grid 16:3:1:1:1:14; skhd -k 'escape' # focus
 
 # resize window - we do not exit this mode automatically.
 resize < h       : yabai -m window --resize left:-20:0
@@ -448,13 +449,8 @@ launch_script < 0 : skhd -k 'escape'; ~/.runners/hotkey-0
 
 
 # # GLOBAL COMMANDS
-fn - c : open -a 'Google Chrome'
-fn - e : open -a 'Visual Studio Code'
-fn - j : open -a 'Alacritty'
-fn - f : open ~/Downloads
-fn - t : ~/.bin/macos/new-terminal.applescript
-fn - u : skhd -k 'escape'; ~/.bin/macos/browser-url.applescript >> ~/.chrome.crawljob
-
+active < c : open -a 'Alacritty'; skhd -k 'escape'
+active < b : open -a 'Google Chrome'; skhd -k 'escape'
 
 # # set insertion point in focused container
 ctrl + alt - h : yabai -m window --insert west
@@ -462,12 +458,3 @@ ctrl + alt - j : yabai -m window --insert south
 ctrl + alt - k : yabai -m window --insert north
 ctrl + alt - l : yabai -m window --insert east
 
-# # toggle sticky, float and resize to picture-in-picture size
-# fn - p : yabai -m window --toggle sticky; yabai -m window --grid 5:5:4:0:1:1
-
-
-# Alacritty
-# cmd - j [
-#   "alacritty" : skhd -k "cmd - h"
-#   * : for wid in $(yabai -m query --windows | jq '.[] | select(.app == "Alacritty") | .id'); yabai -m window $wid --space mouse; yabai -m window --focus $wid; end
-# ]
