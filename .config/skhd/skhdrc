@@ -85,6 +85,8 @@ active < h    : yabai -m window --focus west; skhd -k 'escape'
 active < j    : yabai -m window --focus south; skhd -k 'escape'
 active < k    : yabai -m window --focus north; skhd -k 'escape'
 active < l    : yabai -m window --focus east; skhd -k 'escape'
+active < p    : yabai -m window --focus stack.prev; skhd -k 'escape'
+active < n    : yabai -m window --focus stack.next; skhd -k 'escape'
 focus_window < h    : yabai -m window --focus west; skhd -k 'escape'
 focus_window < j    : yabai -m window --focus south; skhd -k 'escape'
 focus_window < k    : yabai -m window --focus north; skhd -k 'escape'
@@ -94,9 +96,13 @@ focus_window < p    : yabai -m window --focus stack.prev; skhd -k 'escape'
 focus_window < n    : yabai -m window --focus stack.next; skhd -k 'escape'
 focus_window < m    : yabai -m window --focus largest; skhd -k 'escape'
 focus_window < c    : open -a 'Alacritty'; skhd -k 'escape'
-focus_window < b    : open -a 'Google Chrome'; skhd -k 'escape'
+focus_window < b    : open -a 'Arc'; skhd -k 'escape'
 
 # focus spaces
+active < 1 : yabai -m space --focus 1; skhd -k 'escape';
+active < 2 : yabai -m space --focus 2; skhd -k 'escape';
+active < 3 : yabai -m space --focus 3; skhd -k 'escape';
+active < 4 : yabai -m space --focus 4; skhd -k 'escape';
 focus_space < h    : yabai -m space --focus prev; skhd -k 'escape'
 focus_space < j    : yabai -m space --focus next; skhd -k 'escape'
 focus_space < k    : yabai -m space --focus prev; skhd -k 'escape'
@@ -450,7 +456,7 @@ launch_script < 0 : skhd -k 'escape'; ~/.runners/hotkey-0
 
 # # GLOBAL COMMANDS
 active < c : open -a 'Alacritty'; skhd -k 'escape'
-active < b : open -a 'Google Chrome'; skhd -k 'escape'
+active < b : open -a 'Arc'; skhd -k 'escape'
 
 # # set insertion point in focused container
 ctrl + alt - h : yabai -m window --insert west

@@ -11,8 +11,8 @@ sketchybar	--bar \
                 blur_radius=0 \
                 position=top \
                 sticky=on \
-                padding_left=23 \
-                padding_right=23 \
+                padding_left=12 \
+                padding_right=12 \
                 display=main \
                 color=0x6624273a
 
@@ -45,7 +45,7 @@ sketchybar	--add	item current_space left \
 sketchybar 	--add item front_app left \
             --set   front_app \
                           background.padding_left=0 \
-                         background.padding_right=0 \
+                          background.padding_right=0 \
                           icon.y_offset=0 \
                           icon.color=0xffffffff \
                           label.drawing=no \
@@ -65,9 +65,11 @@ sketchybar  --add   bracket front_app_bracket \
 
 sketchybar  --add   item clock right \
             --set   clock \
-                        icon= \
+                        icon= \
+                        icon.drawing=off \
                         icon.y_offset=1 \
                         icon.color=0xffed8796 \
+                        label.padding_left=7 \
                         update_freq=10 \
                         script="$PLUGIN_DIR/clock.sh"
 
