@@ -13,7 +13,7 @@ if status is-interactive
     fish_add_path $HOME/.cargo/bin
 
     # python@3.9
-    fish_add_path /Users/kattitude/Library/Python/3.9/bin
+    # fish_add_path /Users/kattitude/Library/Python/3.9/bin
 
     # Haskell
     fish_add_path $HOME/.ghcup/bin:$HOME/.cabal/bin
@@ -44,8 +44,8 @@ if status is-interactive
     alias config='/opt/homebrew/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
     # aliases:python
-    alias python3=/opt/homebrew/bin/python3.9
-    alias pip3=/opt/homebrew/bin/pip3.9
+    # alias python3=/opt/homebrew/bin/python3.9
+    # alias pip3=/opt/homebrew/bin/pip3.9
 
     # ---- key bindings ----
     fish_vi_key_bindings
