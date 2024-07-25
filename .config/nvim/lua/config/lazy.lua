@@ -16,15 +16,13 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
-    -- { import = "lazyvim.plugins.extras.formatting.prettier" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+
     -- editor
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.editor.leap" },
-    -- copilot
-    -- { import = "lazyvim.plugins.extras.coding.copilot" },
     -- import/override with your plugins
     { import = "plugins" },
-    -- { import = ""}
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
