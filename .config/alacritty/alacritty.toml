@@ -1,4 +1,4 @@
-theme = "Monokai-Pro"
+# theme = "Monokai-Pro"
 
 [colors.bright]
 black = "#727072"

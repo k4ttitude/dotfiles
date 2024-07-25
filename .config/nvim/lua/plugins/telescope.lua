@@ -1,6 +1,5 @@
 -- keymaps
 local builtin = require("telescope.builtin")
-local Util = require("lazyvim.util")
 
 return {
   "nvim-telescope/telescope.nvim",
@@ -34,14 +33,14 @@ return {
   keys = {
     {
       "<leader><leader>",
-      Util.telescope("find_files", { hidden = true, no_ignore = true }),
+      LazyVim.pick("find_files", { hidden = true, no_ignore = true }),
       desc = "Find files (root dir)",
     },
-    { "<leader>fF", Util.telescope("files"), desc = "Find Files (root dir)" },
-    { "<leader>ff", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+    { "<leader>fF", LazyVim.pick("files"), desc = "Find Files (root dir)" },
+    { "<leader>ff", LazyVim.pick("files", { cwd = false }), desc = "Find Files (cwd)" },
     { "<leader>fR", builtin.lsp_references, desc = "Recent finds" },
-    { "<leader>fr", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent finds (cwd)" },
-    { "<leader>sG", Util.telescope("live_grep"), desc = "Grep (root dir)" },
-    { "<leader>sg", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
+    { "<leader>fr", LazyVim.pick("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent finds (cwd)" },
+    { "<leader>sG", LazyVim.pick("live_grep"), desc = "Grep (root dir)" },
+    { "<leader>sg", LazyVim.pick("live_grep", { cwd = false }), desc = "Grep (cwd)" },
   },
 }
