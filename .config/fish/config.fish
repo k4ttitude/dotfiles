@@ -57,4 +57,7 @@ if status is-interactive
     bind -M insert \cp history-prefix-search-backward
     bind -M insert \ck 'clear; commandline -f repaint'
     bind -M normal \ck 'clear; commandline -f repaint'
+
+    # nvm
+    load_nvm > /dev/stderr
 end
