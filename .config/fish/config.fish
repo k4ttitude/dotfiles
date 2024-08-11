@@ -59,5 +59,11 @@ if status is-interactive
     bind -M normal \ck 'clear; commandline -f repaint'
 
     # nvm
-    load_nvm > /dev/stderr
+    # load_nvm > /dev/stderr
+
+    # fzf key bindings
+    # fzf --fish | source
+    fzf_configure_bindings
+    bind \e\[21\;5~ _fzf_search_processes
+    bind -M insert \e\[21\;5~ _fzf_search_processes
 end
