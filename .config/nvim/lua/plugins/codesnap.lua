@@ -2,7 +2,7 @@ return {
   "mistricky/codesnap.nvim",
   build = "make",
   keys = {
-    { "<leader>cs", "<cmd>CodeSnap<cr>", mode = "x", desc = "Snapshot and copy into clipboard" },
+    { "<leader>cs", "<Esc><cmd>CodeSnap<cr>", mode = "x", desc = "Snapshot and copy into clipboard" },
   },
   opts = {
     watermark = "",

@@ -20,11 +20,13 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents",
+        path = "/Users/kattitude/Library/Mobile Documents/iCloud~md~obsidian/Documents/Root",
       },
     },
   },
   keys = {
-    { "<leader>sO", "<cmd>ObsidianSearch<cr>", desc = "Obsidian" },
+    { "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "Obsidian Search" },
+    { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "Obsidian New" },
+    { "<leader>o<tab>", ":Obsidian", desc = "Obsidian..." },
   },
 }

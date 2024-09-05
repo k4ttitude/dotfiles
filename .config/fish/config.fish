@@ -12,6 +12,10 @@ if status is-interactive
     # rust
     fish_add_path $HOME/.cargo/bin
 
+    # gcc
+    fish_add_path /opt/homebrew/opt/avr-gcc@8/bin
+    fish_add_path /opt/homebrew/opt/arm-none-eabi-binutils/bin
+
     # pyenv
     set -Ux PYENV_ROOT $HOME/.pyenv
     fish_add_path $PYENV_ROOT/bin
@@ -27,8 +31,8 @@ if status is-interactive
     export CPPFLAGS="-I/opt/homebrew/opt/postgresql@12/include"
 
     # openjdk@11
-    fish_add_path "/opt/homebrew/opt/openjdk@11/bin"
-    #export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
+    fish_add_path /opt/homebrew/opt/openjdk/bin
+    #set -gx CPPFLAGS "-I/opt/homebrew/opt/openjdk/include"
 
     # pnpm
     export PNPM_HOME="/Users/kattitude/Library/pnpm"
@@ -63,7 +67,14 @@ if status is-interactive
 
     # fzf key bindings
     # fzf --fish | source
-    fzf_configure_bindings
-    bind \e\[21\;5~ _fzf_search_processes
-    bind -M insert \e\[21\;5~ _fzf_search_processes
+    _fzf_uninstall_bindings
+    bind -m fzf \cf ''
+    bind -M insert -m fzf \cf ''
+
+    bind -M fzf -m insert p _fzf_search_processes
+    bind -M fzf -m insert v _fzf_search_variables
+    bind -M fzf -m insert d _fzf_search_directory
+    bind -M fzf -m insert l _fzf_search_git_log
+    bind -M fzf -m insert s _fzf_search_git_status
+    bind -M fzf -m insert \e cancel-commandline
 end

@@ -16,8 +16,19 @@ config = {
 		bottom = 0,
 	},
 
-	font = wezterm.font("MesloLGM Nerd Font", { weight = "Bold" }),
-	font_size = 11,
+	force_reverse_video_cursor = true,
+
+	-- cell_width = 0.8,
+	freetype_render_target = "HorizontalLcd",
+	freetype_load_flags = "NO_HINTING",
+	-- freetype_interpreter_version = 40,
+	font = wezterm.font("MesloLGM Nerd Font Mono"),
+	font_size = 11.5,
+	foreground_text_hsb = {
+		hue = 1.0,
+		saturation = 1.0,
+		brightness = 1.15,
+	},
 
 	color_scheme = "Monokai Pro (Gogh)",
 	colors = {
