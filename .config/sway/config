@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -234,6 +234,7 @@ for_window {
     [window_type="tooltip"] $float
     [window_type="notification"] $float
     [title="Picture in picture"] border pixel 1; floating enable
+    [title="Picture-in-Picture"] border pixel 1; floating enable
 
     [class="steam_app.*"] $game
     [instance="steam_app.*"] $game

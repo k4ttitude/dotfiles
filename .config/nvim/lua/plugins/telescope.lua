@@ -1,6 +1,5 @@
 -- keymaps
 local builtin = require("telescope.builtin")
-local Util = require("lazyvim.util")
 
 return {
   "nvim-telescope/telescope.nvim",
@@ -32,8 +31,16 @@ return {
     })
   end,
   keys = {
-    { "<leader>fr", builtin.lsp_references, desc = "Find references" },
-    { "<leader>fl", builtin.lsp_references, desc = "Last finds" },
-    { "<leader>fL", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Last finds (cwd)" },
+    {
+      "<leader><leader>",
+      LazyVim.pick("find_files", { hidden = true, no_ignore = true }),
+      desc = "Find files (root dir)",
+    },
+    { "<leader>fF", LazyVim.pick("files"),                              desc = "Find Files (root dir)" },
+    { "<leader>ff", LazyVim.pick("files", { cwd = false }),             desc = "Find Files (cwd)" },
+    { "<leader>fR", builtin.lsp_references,                             desc = "Recent finds" },
+    { "<leader>fr", LazyVim.pick("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent finds (cwd)" },
+    { "<leader>sG", LazyVim.pick("live_grep"),                          desc = "Grep (root dir)" },
+    { "<leader>sg", LazyVim.pick("live_grep", { cwd = false }),         desc = "Grep (cwd)" },
   },
 }

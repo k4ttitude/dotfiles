@@ -9,6 +9,12 @@ if status is-interactive
     fish_add_path /usr/local/bin
     fish_add_path $HOME/.local/bin
 
+    # pyenv
+    pyenv init - | source
+
+    # java
+    fish_add_path /usr/lib/jvm/java-11-openjdk/bin
+
     # ---- aliases ----
     alias g=git
     alias p=pnpm
@@ -16,7 +22,6 @@ if status is-interactive
 
     # aliases:dotfiles
     alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
 
     # ---- key bindings ----
     fish_vi_key_bindings
@@ -30,11 +35,25 @@ if status is-interactive
     bind -M insert \cp history-prefix-search-backward
     bind -M insert \ck 'clear; commandline -f repaint'
     bind -M normal \ck 'clear; commandline -f repaint'
+
+    # fzf key bindings
+    # fzf key bindings
+    # fzf --fish | source
+    _fzf_uninstall_bindings
+    bind -m fzf \cf ''
+    bind -M insert -m fzf \cf ''
+
+    bind -M fzf -m insert p _fzf_search_processes
+    bind -M fzf -m insert v _fzf_search_variables
+    bind -M fzf -m insert d _fzf_search_directory
+    bind -M fzf -m insert l _fzf_search_git_log
+    bind -M fzf -m insert s _fzf_search_git_status
+    bind -M fzf -m insert \e cancel-commandline
 end
 
 # pnpm
 set -gx PNPM_HOME "/home/katt/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
